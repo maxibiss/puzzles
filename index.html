@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu de Casse-Tête Premium</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <!-- Écran d'accueil (Choix de l'image) -->
+        <section id="screen-home" class="screen active">
+            <h1>Casse-Tête</h1>
+            <p>Choisissez votre image</p>
+            <div class="image-gallery">
+                <div class="image-card" data-image="images/cactus.png">
+                    <img src="images/cactus.png" alt="Cactus">
+                    <span>Cactus</span>
+                </div>
+                <div class="image-card" data-image="images/elephant.png">
+                    <img src="images/elephant.png" alt="Éléphant">
+                    <span>Éléphant</span>
+                </div>
+                <div class="image-card" data-image="images/paris.png">
+                    <img src="images/paris.png" alt="Paris">
+                    <span>Paris</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Écran de difficulté -->
+        <section id="screen-difficulty" class="screen">
+            <h1>Sélection du Niveau</h1>
+            <p>Choisissez votre difficulté</p>
+            <div class="difficulty-options">
+                <button class="btn difficulty-btn" data-level="easy" data-pieces="9" data-grid="3"
+                    data-time="180">Facile (9
+                    pièces)</button>
+                <button class="btn difficulty-btn" data-level="medium" data-pieces="25" data-grid="5"
+                    data-time="300">Moyen (25
+                    pièces)</button>
+                <button class="btn difficulty-btn" data-level="hard" data-pieces="49" data-grid="7"
+                    data-time="600">Difficile (49
+                    pièces)</button>
+            </div>
+            <button class="btn btn-secondary mt-20" id="btn-back-home">Retour</button>
+        </section>
+
+        <!-- Écran du jeu -->
+        <section id="screen-game" class="screen game-screen">
+            <header class="game-header">
+                <div class="timer" id="timer">05:00</div>
+                <button class="btn btn-action" id="btn-quit">Quitter</button>
+            </header>
+
+            <div class="mini-preview" id="mini-preview"></div>
+
+            <div class="game-board" id="game-board">
+                <!-- Les pièces du puzzle y seront générées -->
+            </div>
+        </section>
+
+        <!-- Modal Fin de Partie -->
+        <div id="modal-result" class="modal-overlay">
+            <div class="modal-content">
+                <h2 id="result-title">Temps écoulé !</h2>
+                <p id="result-message">Vous n'avez pas réussi à temps.</p>
+                <div class="modal-actions" style="display: flex; gap: 1rem; justify-content: center;">
+                    <button class="btn btn-primary" id="btn-restart">Rejouer</button>
+                    <button class="btn btn-secondary" id="btn-view-puzzle" style="display: none;">Admirer le
+                        casse-tête</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
